@@ -1,0 +1,145 @@
+:root {
+    --primary-color: rgba(255, 255, 255, 0.30);
+    --btnElem: rgb(255, 255, 255);
+}
+
+* {
+    box-sizing: content-box;
+    border-style: solid;
+    border-width: 0;
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+body {
+    font-family: 'arial', sans-serif;
+    height: 100vh;
+    background: rgb(131,58,180);
+    background: linear-gradient(80deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+
+input, button {
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#nouvelleTache button {
+    color: var(--btnElem);
+    width: 50px;
+    aspect-ratio: 1 / 1;
+}
+
+
+#todoList { 
+    width: 500px;
+    height: fit-content;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(40px);
+    border-radius: 1em;
+    box-shadow:  2px 2px 15px rgba(0, 0, 0, 0.075);
+}
+
+#nouvelleTache {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+
+#nouvelleTache input {
+    flex-grow: 1;
+    cursor: text;
+    padding-left: 15px;
+    font-size: 1.2em;
+    border-width: 1px;
+    color: white;
+    border-color: white;
+    background-color: transparent;
+}
+
+#nouvelleTache input::placeholder {
+    color: rgba(255, 255, 255, 0.50);
+}
+
+#nouvelleTache input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#nouvelleTache button {
+    background-color: var(--primary-color);
+    font-size: 2em;
+}
+
+#listeTache {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 380px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+#listeTache > div {
+    background-color: rgba(255, 255, 255, 0.07);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+    padding-left: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#listeTache > div:hover{
+    text-decoration: line-through;
+}
+
+#listeTache > div button {
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    color: white;
+    font-size: 1.2em;
+}
+
+#listeTache > div p {
+    margin: 0;
+    font-size: 1em;
+
+}
+
+.supprimer{
+    background-color: rgb(255, 0, 0);
+}
+
+#suprTout button {
+    background-color: var(--primary-color);
+}
+
+#suprTout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-top-width: 1px;
+}
+
+#suprTout button {
+    font-size: 1em;
+    padding: 12px ;
+    color: var(--btnElem);
+}
+
+#suprTout p {
+    font-size: 0.8em;
+}
