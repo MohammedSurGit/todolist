@@ -1,7 +1,7 @@
 /* DOM */
 const btnAjouter = document.querySelector('#ajouter');
 const listTache = document.querySelector('#listeTache');
-const toutSupprBtn = document.querySelector('#suprTout > button');
+const toutSupprBtn = document.querySelectorAll('.btnToutSuppr');
 
 btnAjouter.addEventListener('click', () => {
     /* Récupere la valeur de l'input */
@@ -49,10 +49,10 @@ btnAjouter.addEventListener('click', () => {
     });
 
     /* Ajouter un evenemenet sur toutSupprBtn  */
-    toutSupprBtn.addEventListener('click', () => {
-        listTache.removeChild(newDiv)
-    })
+    toutSupprBtn.forEach(btn => {
+        btn.addEventListener('click', () => {
+            listTache.removeChild(newDiv)
+        });
+    });
 
-});
-
-
+})

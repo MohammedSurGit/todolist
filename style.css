@@ -11,9 +11,10 @@
 }
 
 body {
+    padding: 0;
+    margin: 0;
     font-family: 'arial', sans-serif;
     height: 100vh;
-    background: rgb(131,58,180);
     background: linear-gradient(80deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
     color: white;
     display: flex;
@@ -46,6 +47,31 @@ input, button {
     backdrop-filter: blur(40px);
     border-radius: 1em;
     box-shadow:  2px 2px 15px rgba(0, 0, 0, 0.075);
+}
+
+@media screen and (max-width: 600px){
+    #todoList {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header button {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    header button {
+        display: block;
+    }
 }
 
 #nouvelleTache {
@@ -90,6 +116,12 @@ input, button {
     overflow-y: scroll;
 }
 
+@media screen and (max-width: 600px){
+    #listeTache {
+        height: 780px;
+    }
+}
+
 #listeTache > div {
     background-color: rgba(255, 255, 255, 0.07);
     display: flex;
@@ -115,15 +147,10 @@ input, button {
 #listeTache > div p {
     margin: 0;
     font-size: 1em;
-
 }
 
 .supprimer{
     background-color: rgb(255, 0, 0);
-}
-
-#suprTout button {
-    background-color: var(--primary-color);
 }
 
 #suprTout {
@@ -134,10 +161,17 @@ input, button {
     border-top-width: 1px;
 }
 
-#suprTout button {
+.btnToutSuppr {
     font-size: 1em;
-    padding: 12px ;
+    padding: 15px ;
     color: var(--btnElem);
+    background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 600px) {
+    #suprTout button {
+        display: none;
+    }
 }
 
 #suprTout p {
