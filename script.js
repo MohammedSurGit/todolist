@@ -54,4 +54,21 @@ btnAjouter.addEventListener('click', () => {
         });
     });
 
+});
+
+
+const btnAide = document.querySelector('#btnAide');
+const aideModal = document.querySelector('#aideModal');
+const btnFerm = document.querySelector('#aideModal div div:first-child i')
+
+btnAide.addEventListener('click', () => {
+    const boxDisplay = window.getComputedStyle(aideModal).display;
+    if (boxDisplay === 'none') {
+        aideModal.style.display = 'block';
+    } else aideModal.style.display = 'none';
+
+btnFerm.addEventListener('click', () => {
+    aideModal.style.display = 'none';
 })
+
+});

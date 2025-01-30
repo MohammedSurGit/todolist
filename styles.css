@@ -1,6 +1,16 @@
 :root {
-    --primary-color: rgba(255, 255, 255, 0.30);
+    /* color */
+    --primary-color: rgba(255, 255, 255, 0.15);
     --btnElem: rgb(255, 255, 255);
+
+    /* shadow */
+    --box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.35);
+
+    /* filter */
+    --blur: blur(40px);
+
+    /* border radius */
+    --border-radius: 1em;
 }
 
 * {
@@ -39,17 +49,17 @@ input, button {
 #nouvelleTache button {
     color: var(--btnElem);
     width: 50px;
-    aspect-ratio: 1 / 1;
+    height: 50px;
 }
 
 #todoList { 
     width: 500px;
     height: fit-content;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(40px);
-    border-radius: 1em;
-    box-shadow:  2px 2px 15px rgba(0, 0, 0, 0.35);
+    background-color: var(--primary-color);
+    backdrop-filter: var(--blur);
+    border-radius: var(--border-radius);
+    box-shadow:  var(--box-shadow);
 }
 
 @media screen and (max-width: 600px){
@@ -88,7 +98,7 @@ header button {
     font-size: 1.2em;
     border-width: 1px;
     color: white;
-    border-color: white;
+    border-color: hsla(0, 0%, 100%, 0.5);
     background-color: transparent;
 }
 
@@ -116,7 +126,7 @@ header button {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    height: 380px;
+    height: 360px;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -150,7 +160,7 @@ header button {
 
 #listeTache > div button {
     width: 50px;
-    aspect-ratio: 1 / 1;
+    height: 50px;
     color: white;
     font-size: 1.2em;
 }
@@ -170,7 +180,7 @@ header button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding-top: 15px;
     border-top-width: 1px;
 }
 
@@ -181,22 +191,82 @@ header button {
     background-color: var(--primary-color);
 }
 
-#help {
+
+#suprTout p {
+    margin: 0;
+    align-self: flex-end;
+    font-size: 0.8em;
+    opacity: 0.5;
+}
+
+#aide {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+#btnAide {
     padding: 15px;
     background-color: transparent;
     color: white;
     font-size: 1.4em;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
 }
 
 @media screen and (max-width: 600px) {
-    #help {
+    #aide {
         display: none;
     }
 }
 
-#suprTout p {
-    font-size: 0.8em;
+#aideModal {
+    height: 250px;
+    width: 200px;
+    padding: 20px;
+    background: var(--primary-color);
+    box-shadow: var(--box-shadow);
+    backdrop-filter: var(--blur);
+    border-radius: var(--border-radius);
+    display: none;
 }
+
+#aideModal h2 {
+    margin:0;
+    font-size: 1.2em;
+}
+
+#aideModal div {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20px 1fr;
+    gap: 15px;
+}
+
+#aideModal div div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#aideModal div div:first-child i {
+    color: rgba(255, 255, 255, 0.298);
+    cursor: pointer;
+}
+
+#aideInfos {
+    flex-grow: 1;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-top-width: 1px;
+    padding-top: 5px;
+}
+
+#aideInfos p {
+    margin: 0;
+}
+
+#aide > div:last-child {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+} 
