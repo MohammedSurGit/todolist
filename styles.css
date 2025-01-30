@@ -7,19 +7,23 @@
     box-sizing: content-box;
     border-style: solid;
     border-width: 0;
-    border-color: rgba(0, 0, 0, 0.12);
+    border-color: rgba(255, 255, 255, 0.12);
 }
 
 body {
     padding: 0;
     margin: 0;
     font-family: 'arial', sans-serif;
-    height: 100vh;
-    background: linear-gradient(80deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    background-image: linear-gradient(to left, #00327e, #212f87, #3a298e, #521d92, #690093);
     color: white;
+}
+
+main {
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 h1 {
@@ -38,7 +42,6 @@ input, button {
     aspect-ratio: 1 / 1;
 }
 
-
 #todoList { 
     width: 500px;
     height: fit-content;
@@ -46,15 +49,17 @@ input, button {
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(40px);
     border-radius: 1em;
-    box-shadow:  2px 2px 15px rgba(0, 0, 0, 0.075);
+    box-shadow:  2px 2px 15px rgba(0, 0, 0, 0.35);
 }
 
 @media screen and (max-width: 600px){
     #todoList {
-        width: 100vw;
         height: 100vh;
+        width: 100vw;
         border-radius: 0;
         box-shadow: none;
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -66,12 +71,6 @@ header {
 
 header button {
     display: none;
-}
-
-@media screen and (max-width: 600px) {
-    header button {
-        display: block;
-    }
 }
 
 #nouvelleTache {
@@ -91,6 +90,12 @@ header button {
     color: white;
     border-color: white;
     background-color: transparent;
+}
+
+@media screen and (max-width: 600px) {
+    #nouvelleTache input {
+        font-size: 1em;
+    }
 }
 
 #nouvelleTache input::placeholder {
@@ -118,7 +123,7 @@ header button {
 
 @media screen and (max-width: 600px){
     #listeTache {
-        height: 780px;
+        flex-grow: 1;
     }
 }
 
@@ -137,6 +142,12 @@ header button {
     text-decoration: line-through;
 }
 
+@media screen and (max-width: 600px) {
+    #listeTache > div:hover{
+        text-decoration: none;
+    }
+}
+
 #listeTache > div button {
     width: 50px;
     aspect-ratio: 1 / 1;
@@ -150,7 +161,9 @@ header button {
 }
 
 .supprimer{
-    background-color: rgb(255, 0, 0);
+    background-color: rgba(255, 255, 255, 0.089);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 #suprTout {
@@ -168,8 +181,18 @@ header button {
     background-color: var(--primary-color);
 }
 
+#help {
+    padding: 15px;
+    background-color: transparent;
+    color: white;
+    font-size: 1.4em;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
 @media screen and (max-width: 600px) {
-    #suprTout button {
+    #help {
         display: none;
     }
 }

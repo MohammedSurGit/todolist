@@ -8,7 +8,8 @@ btnAjouter.addEventListener('click', () => {
     const valeur = document.querySelector('#tache').value;
     /* console.log(nouvelleTache); */
 
-    const newDiv =  document.createElement('div')
+    const newDiv =  document.createElement('div');
+
     const nouvelleTache = document.createElement('p');
     const btnSupprimer = document.createElement('button');
 
@@ -30,8 +31,6 @@ btnAjouter.addEventListener('click', () => {
     newDiv.appendChild(nouvelleTache);
     newDiv.appendChild(btnSupprimer);
 
-
-    /* Ajouter les element créer au DOM */
     listTache.appendChild(newDiv);
 
     /* Ajout un text-decoration au click de newDiv */
@@ -51,7 +50,7 @@ btnAjouter.addEventListener('click', () => {
     /* Ajouter un evenemenet sur toutSupprBtn  */
     toutSupprBtn.forEach(btn => {
         btn.addEventListener('click', () => {
-            listTache.removeChild(newDiv)
+            listTache.removeChild(newDiv);
         });
     });
 
