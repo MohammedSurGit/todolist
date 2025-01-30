@@ -13,6 +13,13 @@
     --border-radius: 1em;
 }
 
+@media screen and (max-width: 600px) {
+    html {
+        touch-action: manipulation;
+    }
+}
+
+
 * {
     box-sizing: content-box;
     border-style: solid;
@@ -50,6 +57,7 @@ input, button {
     color: var(--btnElem);
     width: 50px;
     height: 50px;
+    aspect-ratio: 1 / 1;
 }
 
 #todoList { 
@@ -161,6 +169,7 @@ header button {
 #listeTache > div button {
     width: 50px;
     height: 50px;
+    aspect-ratio: 1 / 1;
     color: white;
     font-size: 1.2em;
 }
