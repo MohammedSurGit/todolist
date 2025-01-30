@@ -223,9 +223,9 @@ header button {
 
 @media screen and (max-width: 600px) {
     #aide {
-        display: none;
+       display: none;
     }
-}
+} 
 
 #aideModal {
     height: 250px;
