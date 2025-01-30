@@ -269,8 +269,21 @@ header button {
     padding-top: 5px;
 }
 
-#aideInfos p {
+#aideInfos ul {
     margin: 0;
+    height: fit-content;
+    width: fit-content;
+    font-size: 0.8em;
+    padding-left: 12px;
+    color: rgba(255, 255, 255, 0.80)
+}
+
+#aideInfos li {
+    margin-bottom: 5px;
+}
+
+#aideInfos ul i {
+    font-size: 0.8em;
 }
 
 #aide > div:last-child {
