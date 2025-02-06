@@ -1,313 +1,330 @@
 :root {
-    /* color */
-    --primary-color: rgba(255, 255, 255, 0.15);
-    --btnElem: rgb(255, 255, 255);
+  /* color */
+  --primary-color: rgba(255, 255, 255, 0.15);
+  --btnElem: rgb(255, 255, 255);
 
-    /* shadow */
-    --box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.35);
+  /* shadow */
+  --box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.35);
 
-    /* filter */
-    --blur: blur(40px);
+  /* filter */
+  --blur: blur(40px);
 
-    /* border radius */
-    --border-radius: 1em;
+  /* border radius */
+  --border-radius: 1em;
 }
 
 @media screen and (max-width: 600px) {
-    html {
-        touch-action: manipulation;
-    }
+  html {
+    touch-action: manipulation;
+  }
 }
 
-
 * {
-    box-sizing: content-box;
-    border-style: solid;
-    border-width: 0;
-    border-color: rgba(255, 255, 255, 0.12);
+  box-sizing: content-box;
+  border-style: solid;
+  border-width: 0;
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    font-family: 'arial', sans-serif;
-   /*  background-image: linear-gradient(to left, #00327e, #212f87, #3a298e, #521d92, #690093); */
-   background-color: rgb(8, 17, 40);
-    color: white;
+  padding: 0;
+  margin: 0;
+  font-family: "arial", sans-serif;
+  /*  background-image: linear-gradient(to left, #00327e, #212f87, #3a298e, #521d92, #690093); */
+  background-color: rgb(8, 17, 40);
+  color: white;
 }
 
 main {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 4em;
 }
 
 h1 {
-    font-size: 2em;
+  font-size: 2em;
 }
 
-
-input, button {
-    cursor: pointer;
-    border-radius: 4px;
+input,
+button {
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 #nouvelleTache button {
-    color: var(--btnElem);
-    width: 50px;
-    height: 50px;
-    font-weight: 200;
-    aspect-ratio: 1 / 1;
+  color: var(--btnElem);
+  width: 50px;
+  height: 50px;
+  font-weight: 200;
+  aspect-ratio: 1 / 1;
 }
 
-#todoList { 
-    width: 500px;
-    height: fit-content;
-    padding: 20px;
-    background-color: var(--primary-color);
-    backdrop-filter: var(--blur);
-    border-radius: var(--border-radius);
-    box-shadow:  var(--box-shadow);
+#todoList {
+  width: 500px;
+  height: fit-content;
+  padding: 20px;
+  background-color: var(--primary-color);
+  backdrop-filter: var(--blur);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
 }
 
-@media screen and (max-width: 600px){
-    #todoList {
-        height: 100vh;
-        width: 100vw;
-        border-radius: 0;
-        box-shadow: none;
-        display: flex;
-        flex-direction: column;
-    }
+@media screen and (max-width: 600px) {
+  #todoList {
+    height: 100vh;
+    width: 100vw;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header button {
-    display: none;
+  display: none;
 }
 
 #nouvelleTache {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    /* margin-bottom: 30px; */
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  /* margin-bottom: 30px; */
 }
 
 #textInfos {
-    height: 20px;
-    color: rgba(255, 255, 255, 0.80);
+  height: 20px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 #textInfos p {
-    padding: 0;
+  padding: 0;
 }
 
 .textInfosError {
-    color: rgba(255, 0, 0, 0.8) !important;
+  color: rgba(255, 0, 0, 0.8) !important;
 }
 
 /* .textInfosSucces {
     color: rgba(6, 173, 42, 0.8) !important;
 } */
 
-
 #nouvelleTache input {
-    flex-grow: 1;
-    cursor: text;
-    padding-left: 15px;
-    font-size: 1.2em;
-    border-width: 1px;
-    color: white;
-    border-color: hsla(0, 0%, 100%, 0.5);
-    background-color: transparent;
+  flex-grow: 1;
+  cursor: text;
+  padding-left: 15px;
+  font-size: 1.2em;
+  border-width: 1px;
+  color: white;
+  border-color: hsla(0, 0%, 100%, 0.5);
+  background-color: transparent;
 }
 
 @media screen and (max-width: 600px) {
-    #nouvelleTache input {
-        font-size: 1em;
-    }
+  #nouvelleTache input {
+    font-size: 1em;
+  }
 }
 
 #nouvelleTache input::placeholder {
-    color: rgba(255, 255, 255, 0.50);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 #nouvelleTache input:focus {
-    outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
 
 #nouvelleTache button {
-    background-color: var(--primary-color);
-    font-size: 2em;
+  background-color: var(--primary-color);
+  font-size: 2em;
 }
 
 #listeTache {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    height: 360px;
-    overflow: hidden;
-    overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 360px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
-@media screen and (max-width: 600px){
-    #listeTache {
-        flex-grow: 1;
-    }
+@media screen and (max-width: 600px) {
+  #listeTache {
+    flex-grow: 1;
+  }
 }
 
 #listeTache > div {
-    background-color: rgba(255, 255, 255, 0.07);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: fit-content;
-    padding-left: 15px;
-    cursor: pointer;
-    border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  padding-left: 15px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-#listeTache > div:hover{
-    text-decoration: line-through;
+#listeTache > div:hover {
+  text-decoration: line-through;
 }
 
 @media screen and (max-width: 600px) {
-    #listeTache > div:hover{
-        text-decoration: none;
-    }
+  #listeTache > div:hover {
+    text-decoration: none;
+  }
 }
 
 #listeTache > div button {
-    width: 50px;
-    height: 50px;
-    aspect-ratio: 1 / 1;
-    color: white;
-    font-size: 1.2em;
+  width: 50px;
+  height: 50px;
+  aspect-ratio: 1 / 1;
+  color: white;
+  font-size: 1.2em;
 }
 
 #listeTache > div p {
-    margin: 0;
-    font-size: 1em;
+  margin: 0;
+  font-size: 1em;
 }
 
-.supprimer{
-    background-color: rgba(255, 255, 255, 0.089);
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+.supprimer {
+  background-color: rgba(255, 255, 255, 0.089);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 #suprTout {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 15px;
-    border-top-width: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top-width: 1px;
 }
 
 .btnToutSuppr {
-    font-size: 1em;
-    padding: 15px ;
-    color: var(--btnElem);
-    background-color: var(--primary-color);
+  font-size: 1em;
+  padding: 15px;
+  color: var(--btnElem);
+  background-color: var(--primary-color);
 }
 
-
 #suprTout p {
-    margin: 0;
-    align-self: flex-end;
-    font-size: 0.8em;
-    opacity: 0.5;
+  margin: 0;
+  align-self: flex-end;
+  font-size: 0.8em;
+  opacity: 0.5;
+}
+
+#graphique {
+  height: fit-content;
+  width: fit-content;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadowx);
+  padding: 20px;
+}
+
+#myChart {
+  width: 400;
+  height: 400;
+  border-top-width: 1px;
 }
 
 #aide {
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
 }
 
 #btnAide {
-    padding: 15px;
-    background-color: transparent;
-    color: white;
-    font-size: 1.4em;
+  padding: 15px;
+  background-color: transparent;
+  color: white;
+  font-size: 1.4em;
 }
 
 @media screen and (max-width: 600px) {
-    #aide {
-       display: none;
-    }
-} 
+  #aide {
+    display: none;
+  }
+}
 
 #aideModal {
-    height: 250px;
-    width: 200px;
-    padding: 20px;
-    background: var(--primary-color);
-    box-shadow: var(--box-shadow);
-    backdrop-filter: var(--blur);
-    border-radius: var(--border-radius);
-    display: none;
+  height: 250px;
+  width: 200px;
+  padding: 20px;
+  background: var(--primary-color);
+  box-shadow: var(--box-shadow);
+  backdrop-filter: var(--blur);
+  border-radius: var(--border-radius);
+  display: none;
 }
 
 #aideModal h2 {
-    margin:0;
-    font-size: 1.2em;
+  margin: 0;
+  font-size: 1.2em;
 }
 
 #aideModal div {
-    height: 100%;
-    display: grid;
-    grid-template-rows: 20px 1fr;
-    gap: 15px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 20px 1fr;
+  gap: 15px;
 }
 
 #aideModal div div:first-child {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #aideModal div div:first-child i {
-    color: rgba(255, 255, 255, 0.298);
-    cursor: pointer;
+  color: rgba(255, 255, 255, 0.298);
+  cursor: pointer;
 }
 
 #aideInfos {
-    flex-grow: 1;
-    overflow: hidden;
-    overflow-y: scroll;
-    border-top-width: 1px;
-    padding-top: 5px;
+  flex-grow: 1;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-top-width: 1px;
+  padding-top: 5px;
 }
 
 #aideInfos ul {
-    margin: 0;
-    height: fit-content;
-    width: fit-content;
-    font-size: 0.8em;
-    padding-left: 12px;
-    color: rgba(255, 255, 255, 0.80)
+  margin: 0;
+  height: fit-content;
+  width: fit-content;
+  font-size: 0.8em;
+  padding-left: 12px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 #aideInfos li {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 #aideInfos ul i {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 #aide > div:last-child {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-} 
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.done {
+  text-decoration: line-through;
+}
