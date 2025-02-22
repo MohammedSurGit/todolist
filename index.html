@@ -14,35 +14,46 @@
   </head>
   <body>
     <main>
-      <section id="todoList">
-        <header>
-          <h1>todo list</h1>
-        </header>
+      <section id="todolist-app">
+        <section id="todoList">
+          <header>
+            <h1>todo list</h1>
+          </header>
+  
+          <div id="nouvelleTache">
+            <input
+              type="text"
+              name="tache"
+              id="tache"
+              placeholder="Ajouter une tâche"
+            />
+            <button id="ajouter"><i class="fa-solid fa-plus"></i></button>
+          </div>
+  
+          <p id="textInfos">Vous avez 0 tâche en cours</p>
+  
+          <div id="listeTache"></div>
+  
+          <footer id="suprTout">
+            <button class="btnToutSuppr">Tout effacer</button>
+            <button class="sauvegarder">Sauvegarder</button>
+          </footer>
+        </section>
+  
+        <div>
+          <div id="graphique">
+            <h2>Graphique</h2>
+            <canvas id="myChart"></canvas>
+          </div>
 
-        <div id="nouvelleTache">
-          <input
-            type="text"
-            name="tache"
-            id="tache"
-            placeholder="Ajouter une tâche"
-          />
-          <button id="ajouter"><i class="fa-solid fa-plus"></i></button>
+          <div id="saveData">
+            <h2>Télécharger la sauvegarde</h2>
+            <span></span>
+            <a href=""></a>
+          </div>
         </div>
-
-        <p id="textInfos">Vous avez 0 tâche en cours</p>
-
-        <div id="listeTache"></div>
-
-        <footer id="suprTout">
-          <p>@Mohammed - DWWB 2025</p>
-          <button class="btnToutSuppr">Effacer tout</button>
-        </footer>
       </section>
 
-      <div id="graphique">
-        <h2>Graphique</h2>
-        <canvas id="myChart"></canvas>
-      </div>
 
       <div id="aide">
         <div id="aideModal">
@@ -55,15 +66,18 @@
               <ul>
                 <li>
                   Cliquez sur <i class="fa-solid fa-plus"></i> pour ajouter une
-                  nouvelle tâche
+                  nouvelle tâche.
                 </li>
-                <li>Cliquez sur la tâche souhaitée pour la cocher</li>
+                <li>Cliquez sur la tâche souhaitée pour la cocher.</li>
                 <li>
                   Pour supprimer une tache cliquer sur
-                  <i class="fa-solid fa-trash"></i>
+                  <i class="fa-solid fa-trash"></i>.
                 </li>
                 <li>
-                  Pour supprimer toutes les tâches cliquez sur 'Effacer tout'
+                  Pour télécharger votre sauvegarde, cliquez sur "Enregistrer", attendez le chargement, puis téléchargez vos données via le lien dans "Télécharger la sauvegarde".
+                </li>
+                <li>
+                  Pour supprimer toutes les tâches cliquez sur "Tout effacer".
                 </li>
               </ul>
             </div>

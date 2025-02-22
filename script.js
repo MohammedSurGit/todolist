@@ -4,12 +4,15 @@ const listTache = document.querySelector("#listeTache");
 const toutSupprBtn = document.querySelectorAll(".btnToutSuppr");
 const textInfos = document.querySelector("#textInfos");
 
+const dataSaveBtn = document.querySelector(".sauvegarder");
+const dataLink = document.querySelector("#saveData > a");
+const inProgressText = document.querySelector("#saveData > span");
+
 const myChartElement = document.querySelector("#myChart");
 
 const myChart = new Chart(myChartElement, {
   type: "pie",
   data: {
-    labels: ["Tâches actives", "Tâches accomplis"],
     datasets: [
       {
         label: "# de tâches accomplis ",
@@ -34,10 +37,36 @@ function majChart() {
       nbTaches++;
     }
   }
-  console.log(nbTaches, nbTachesAccomplis);
 
   myChart.data.datasets[0].data = [nbTaches, nbTachesAccomplis];
   myChart.update();
+}
+
+function createObject() {
+  let listTacheObj = {};
+
+  for (let i = 0; i < listTache.childNodes.length; i++) {
+    let valeur = listTache.childNodes[i];
+
+    if (listTache.childNodes.length != 0) {
+      let isActive = !valeur.classList.contains("done");
+
+      listTacheObj[`tache_${i}`] = {
+        isActive: `${isActive}`,
+        tacheContent: `${valeur.firstChild.textContent}`,
+      };
+    } else {
+      listTacheObj = {};
+    }
+  }
+
+  let blob = new Blob([JSON.stringify(listTacheObj)], {
+    type: "application/json",
+  });
+  const url = URL.createObjectURL(blob);
+
+  dataLink.href = `${url}`;
+  dataLink.download = "todolist_data.json";
 }
 
 function evenement() {
@@ -85,6 +114,7 @@ function evenement() {
       textInfos.textContent = "";
       setTimeout(() => {
         let nbEnfants = listTache.childNodes.length;
+
         if (!textInfos.textContent.includes(`Vous avez ${nbEnfants}`)) {
           if (nbEnfants < 2) {
             textInfos.textContent = `Vous avez ${nbEnfants} tâche en cours`;
@@ -100,6 +130,7 @@ function evenement() {
   newDiv.addEventListener("click", () => {
     newDiv.classList.toggle("done");
     majChart();
+    createObject();
   });
 
   /* Ajouter un événement pour supprimer l'element newDiv */
@@ -113,6 +144,8 @@ function evenement() {
       textInfos.textContent = `Vous avez ${nbEnfants} tâches en cours`;
       textInfos.classList.remove("textInfosError");
     }
+
+    createObject();
   });
 
   /* Ajouter un evenemenet sur toutSupprBtn  */
@@ -121,6 +154,7 @@ function evenement() {
       listTache.removeChild(newDiv);
       let nbEnfants = listTache.childNodes.length;
       majChart();
+      createObject();
       if (nbEnfants < 2) {
         textInfos.textContent = `Vous avez ${nbEnfants} tâche en cours`;
         textInfos.classList.remove("textInfosError");
@@ -133,6 +167,8 @@ function evenement() {
 
   /* Efface la valeur de l'input */
   effacerInput();
+
+  createObject();
 }
 
 btnAjouter.addEventListener("click", () => {
@@ -160,4 +196,18 @@ btnAide.addEventListener("click", () => {
   btnFerm.addEventListener("click", () => {
     aideModal.style.display = "none";
   });
+});
+
+dataSaveBtn.addEventListener("click", () => {
+  console.log(listTache.childNodes.length);
+  if (listTache.childNodes.length != 0) {
+    dataLink.textContent = "";
+    inProgressText.textContent = "sauvegarde en cours...";
+
+    setTimeout(() => {
+      inProgressText.textContent = "";
+      dataLink.textContent = "Cliquez ici pour télécharger la sauvegarde";
+      dataLink.style.color = "#37a2eb";
+    }, 5000);
+  }
 });
