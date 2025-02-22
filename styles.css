@@ -157,7 +157,7 @@ header button {
   font-size: 1.2em;
 }
 
-#listeTache > div:hover {
+#listeTache > div p:hover {
   text-decoration: line-through #ff6485;
 }
 

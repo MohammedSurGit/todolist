@@ -128,7 +128,7 @@ function evenement() {
 
   /* Ajout un text-decoration au click de newDiv */
   newDiv.addEventListener("click", () => {
-    newDiv.classList.toggle("done");
+    newDiv.firstChild.classList.toggle("done");
     majChart();
     createObject();
   });
