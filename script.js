@@ -31,7 +31,7 @@ function majChart() {
   let nbTaches = 0;
   let nbTachesAccomplis = 0;
   for (let i = 0; i < listTache.childNodes.length; i++) {
-    if (listTache.childNodes[i].classList.contains("done")) {
+    if (listTache.childNodes[i].firstChild.classList.contains("done")) {
       nbTachesAccomplis++;
     } else {
       nbTaches++;
