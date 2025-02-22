@@ -83,6 +83,9 @@ button {
   font-weight: 200;
   background-color: #37a2eb;
   font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
