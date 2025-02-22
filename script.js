@@ -46,7 +46,7 @@ function createObject() {
   let listTacheObj = {};
 
   for (let i = 0; i < listTache.childNodes.length; i++) {
-    let valeur = listTache.childNodes[i];
+    let valeur = listTache.childNodes[i].firstChild;
 
     if (listTache.childNodes.length != 0) {
       let isActive = !valeur.classList.contains("done");
